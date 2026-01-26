@@ -1,5 +1,5 @@
 import express, { Router }  from "express";
-
+import path from "path";
 
 export class Server{
 
@@ -22,6 +22,10 @@ export class Server{
         this.app.listen(3000, ()=>{
             console.log(`Server running on port ${3000}`);
         });
+        
+        //const publicPath = path.join(__dirname, '../public');
+
+        this.app.use(express.static(path.join(__dirname, '../public')));
     }
 
 }

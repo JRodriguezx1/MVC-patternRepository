@@ -1,10 +1,11 @@
 import { Router } from "express";
+import path from "path";
 
 /*import { IUserRepository, IUserService, User } from "types/UsersTypes";
 import { userRepository } from "@repositories/userRepository";
 import { userService } from "@services/userService";*/
-import { userController } from "@controllers/usersController";
-import { rolesController } from "@controllers/rolesController";
+import { userController } from "controllers/usersController";
+import { rolesController } from "controllers/rolesController";
 
 /*const userRepo: IUserRepository = new userRepository(); //IUserRepository extiende de Repository y este tiene las propiedades o metodos create() y find()
                                                         // y userRepository implementa de IUserRepository los metodos create() y find() por lo tanto son compatibles.
@@ -20,8 +21,13 @@ export class RouterApp {
         
         const rolescontroller = new rolesController;
 
+        const publicPath = path.join(__dirname, '../views');
         //definir todas las rutas
-        router.get('/', (req, res)=>{res.json('lupe lulu');});
+        router.get('/', (req, res)=>{
+            //res.json('lupe lulu');
+            //res.send('lupelulu');
+            res.sendFile(publicPath+"/index.html");
+        });
         
         //Rutas user
         router.post('/api/user/create', userController.createuser);
