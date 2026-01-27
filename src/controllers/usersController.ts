@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { IUserRepository, IUserService, User } from "types/UsersTypes";
-import { userRepository } from "repositories/userRepository";
-import { userService } from "services/userService"
+import { userRepository } from "@repositories/userRepository";
+import { userService } from "@services/userService"
 import jwt from "jsonwebtoken"
 
 const userRepo:IUserRepository = new userRepository(); //IUserRepository extiende de Repository y este tiene las propiedades o metodos create() y find()
