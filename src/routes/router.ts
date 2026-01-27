@@ -38,7 +38,7 @@ export class RouterApp {
 
         router.put('/api/user/update/:id', userController.updateUser);
 
-        router.delete('/api/user/delete:id', userController.eliminarUser);
+        router.delete('/api/user/delete/:id', userController.eliminarUser);
         
         router.post('/api/auth/register', userController.registerUser);
 

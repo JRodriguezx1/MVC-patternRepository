@@ -1,4 +1,4 @@
-import { Server } from "server/server";
+import { Server } from "@server/server";
 import { RouterApp } from "routes/router";
 import "config/mongodb";
 
