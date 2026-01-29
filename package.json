@@ -10,6 +10,7 @@
     "copy-assets": "npm run copy-public && npm run copy-views",
     "copy-public": "cpx \"src/public/css/**/*\" dist/public/css && cpx \"src/public/js/**/*\" dist/public/js && cpx \"src/public/img/**/*\" dist/public/img",
     "copy-views": "cpx \"src/views/**/*\" dist/views",
+    "tailstart": "npx tailwindcss -i ./src/public/tailwindcss/tailwind.css -o ./public/css/tailwindapp.css --watch",
     "start": "node ./dist/app.js"
   },
   "keywords": [],
@@ -30,6 +31,7 @@
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/morgan": "^1.9.10",
+    "tailwindcss": "^3.4.19",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.3"
