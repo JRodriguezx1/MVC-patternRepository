@@ -7,10 +7,8 @@
     "dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register src/app.ts",
     "frontend:dev": "tsc -w -p tsconfig.frontend.json",
     "build": "tsc && npm run copy-assets",
-    "copy-assets": "npm run copy-public && npm run copy-views",
-    "copy-public": "cpx \"src/public/css/**/*\" dist/public/css && cpx \"src/public/js/**/*\" dist/public/js && cpx \"src/public/img/**/*\" dist/public/img",
-    "copy-views": "cpx \"src/views/**/*\" dist/views",
-    "tailstart": "npx tailwindcss -i ./src/public/tailwindcss/tailwind.css -o ./public/css/tailwindapp.css --watch",
+    "copy-assets": "cpx \"src/public/build/**/*\" dist/public/build && cpx \"src/views/**/*\" dist/views",
+    "tailstart": "npx tailwindcss -i ./src/public/tailwindcss/tailwind.css -o ./src/public/build/css/tailwindapp.css --watch",
     "start": "node ./dist/app.js"
   },
   "keywords": [],

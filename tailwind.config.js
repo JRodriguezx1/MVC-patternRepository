@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/views/**/*.{html}"], //busca en la raiz del proyecto la carpeta view y en todas las carpetas adentro los archivos de extension .html y .php
+  content: ["./src/views/**/*.html"], //busca en la raiz del proyecto la carpeta view y en todas las carpetas adentro los archivos de extension .html y .php
   theme: {
     extend: {
       screens: {
