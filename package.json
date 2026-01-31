@@ -19,6 +19,8 @@
     "argon2": "^0.44.0",
     "cpx": "^1.5.0",
     "dotenv": "^17.2.3",
+    "escpos": "^3.0.0-alpha.6",
+    "escpos-usb": "^3.0.0-alpha.4",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "module-alias": "^2.2.3",
