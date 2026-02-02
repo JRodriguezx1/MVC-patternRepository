@@ -18,7 +18,7 @@ interface User extends Document{
 type data = Record<string, string> //es igual que la anterior forma
 
 interface IUserRepository extends Repository<User>{
-    findOne(query: data):Promise<User | null>
+    findOne(query: data):Promise<User | null>  //se define, construye o implementa en userRepository.ts
 }
 
 interface IUserService {

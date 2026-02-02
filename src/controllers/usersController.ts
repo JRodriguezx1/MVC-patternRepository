@@ -22,7 +22,7 @@ export class userController {
     }
 
     static async unUsuario(req:Request, res:Response){
-        const {id} = req.params;
+        const {id} = req.params;  //id esta tipado como string | string[]
         if(Array.isArray(id))return res.status(400).json({ message: "ID inválido" });
         res.json(await usuarioService.find(id));
     }
