@@ -7,9 +7,17 @@ const printerService:IPrintService = new printService();
 
 export class printController {
 
+    static list  = async(req:Request, res:Response)=>{
+        const devices = await printerService.list();
+        res.json(devices);
+    }
+
     static printTicket  = async(req:Request, res:Response)=>{
         const lineas:Print = req.body;
-        await printerService.printPOS(lineas);
-        res.json(lineas);
+        const devices =  await printerService.list();
+        if(devices.ok){
+            const device = await printerService.printPOS(lineas);
+            res.json(device);
+        }
     }
 }

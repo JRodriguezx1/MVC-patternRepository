@@ -6,6 +6,7 @@ import { userRepository } from "@repositories/userRepository";
 import { userService } from "@services/userService";*/
 import { userController } from "@controllers/usersController";
 import { rolesController } from "@controllers/rolesController";
+import { printController } from "@controllers/printController";
 
 /*const userRepo: IUserRepository = new userRepository(); //IUserRepository extiende de Repository y este tiene las propiedades o metodos create() y find()
                                                         // y userRepository implementa de IUserRepository los metodos create() y find() por lo tanto son compatibles.
@@ -28,22 +29,19 @@ export class RouterApp {
             //res.send('lupelulu');
             res.sendFile(publicPath+"/index.html");
         });
+
+        //Rutas user
+        router.get('/api/printPOS/list', printController.list);
+        router.post('/api/printPOS/printer', printController.printTicket);
         
         //Rutas user
         router.post('/api/user/create', userController.createuser);
-
         router.get('/api/allusers', userController.allUsers);
-
         router.get('/api/user/:id', userController.unUsuario);
-
         router.put('/api/user/update/:id', userController.updateUser);
-
         router.delete('/api/user/delete/:id', userController.eliminarUser);
-        
         router.post('/api/auth/register', userController.registerUser);
-
         router.post('/api/auth/login', userController.loginuser);
-
 
         
         ////Rutas role
