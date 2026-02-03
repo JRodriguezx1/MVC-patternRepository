@@ -34,9 +34,29 @@ export class printService implements IPrintService{
 
     async printPOS(print: Print): Promise<any> {
 
-        const device = new escpos.USB();
+        const device = new escpos.USB(0x0471, 0x0055);
         const printer = new escpos.Printer(device);
-        const dispositivos = escpos.USB.findPrinter();
-        return device;
+        //const dispositivos = escpos.USB.findPrinter();
+        
+        return new Promise((resolve, reject) => {
+
+            device.open((err: any) => {
+            if (err) {
+                return resolve({ ok: false, message: "Error abriendo impresora" });
+            }
+
+            printer
+                .align("ct")
+                .text("MI POS")
+                .drawLine()
+                .text("mi negocio")
+                .cut()
+                .close();
+
+            resolve({ ok: true });
+            });
+
+        });
+       
     }
 }
