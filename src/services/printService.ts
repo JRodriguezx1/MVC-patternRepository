@@ -1,8 +1,8 @@
 import { IPrintService, ListPrintersResponse, Print, DevicePOS } from "types/PrintTypes";
-import escpos from "escpos";
-import USB from "escpos-usb";
+//import escpos from "escpos";
+//import USB from "escpos-usb";
 
-escpos.USB = USB;
+//escpos.USB = USB;
 
 export class printService implements IPrintService{
 
